@@ -1,6 +1,6 @@
 Name:		texlive-tikz-imagelabels
 Version:	51490
-Release:	1
+Release:	2
 Summary:	Put labels on images using TikZ
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tikz-imagelabels
