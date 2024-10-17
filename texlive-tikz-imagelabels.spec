@@ -3,7 +3,7 @@ Version:	51490
 Release:	2
 Summary:	Put labels on images using TikZ
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tikz-imagelabels
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tikz-imagelabels
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-imagelabels.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-imagelabels.doc.r%{version}.tar.xz
