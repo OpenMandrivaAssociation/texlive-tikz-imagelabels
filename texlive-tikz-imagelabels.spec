@@ -1,40 +1,22 @@
-Name:		texlive-tikz-imagelabels
-Version:	51490
-Release:	2
+%global tl_name tikz-imagelabels
+%global tl_revision 51490
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.2
+Release:	%{tl_revision}.1
 Summary:	Put labels on images using TikZ
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tikz-imagelabels
+URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/tikz-imagelabels
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-imagelabels.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-imagelabels.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-imagelabels.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-imagelabels.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-imagelabels.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-imagelabels.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package allows to add label texts to an existing image
-with the aid of TikZ. This may be used to label certain
-features in an image.
+This package allows to add label texts to an existing image with the aid
+of TikZ. This may be used to label certain features in an image.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/tikz-imagelabels
-%{_texmfdistdir}/tex/latex/tikz-imagelabels
-%doc %{_texmfdistdir}/doc/latex/tikz-imagelabels
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
